@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Lecture : Entity
-    {
+    public class Lecture : Entity 
+    { 
+    
+        public string LectureName { get; set; } = string.Empty;
+        
+        public string Description { get; set; } = string.Empty;
+
+        public string? Video {  get; set; }
     }
 }

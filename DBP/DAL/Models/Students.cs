@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Group : Entity
+    public class Students
     {
-        public string GroupName { get; set; } = string.Empty;
-
-       public Students Students { get; set; }
-
+        public List<Student> StudentList {  get; set; }
     }
 }
