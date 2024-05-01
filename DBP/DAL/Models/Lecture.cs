@@ -14,5 +14,9 @@ namespace DAL.Models
         public string Description { get; set; } = string.Empty;
 
         public string? Video {  get; set; }
+
+        public int courseId { get; set; }
+
+        public Course Course { get; set;}
     }
 }
