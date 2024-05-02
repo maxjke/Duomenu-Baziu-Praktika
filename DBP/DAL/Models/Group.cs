@@ -11,10 +11,9 @@ namespace DAL.Models
     { 
         public string GroupName { get; set; } = string.Empty;
 
-        public List<Student> StudentList { get; set; }
+        public ICollection<Student> Students { get; set; } = new List<Student>();
 
-        [ForeignKey("Students_ids")]
-        public string Students_ids { get; set; }
+
 
     }
 }

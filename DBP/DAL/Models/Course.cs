@@ -14,7 +14,6 @@ namespace DAL.Models
         public decimal Price { get; set; }
         public int Duration { get; set; }
         public Teacher Teacher { get; set; }
-
         public ICollection<Lecture> Lectures { get; set; } = new List<Lecture>();
     }
 }

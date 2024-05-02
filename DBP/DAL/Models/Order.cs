@@ -8,5 +8,9 @@ namespace DAL.Models
 {
     public class Order : Entity
     {
+        public string OrderNumber { get; set; } = string.Empty;
+       
+        public virtual ICollection<PaymentMethod> PaymentMethods { get; set; } = new List<PaymentMethod>();
     }
+
 }
