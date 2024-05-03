@@ -17,14 +17,15 @@ namespace DAL.Models
         public string Country { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
 
-
+        [ForeignKey("Student")]
         public int? StudentId { get; set; }
+        [ForeignKey("Teacher")]
         public int? TeacherId { get; set; }
 
-        [ForeignKey("StudentId")]
+       
         public virtual Student? Student { get; set; }
 
-        [ForeignKey("TeacherId")]
+        
         public virtual Teacher? Teacher { get; set; }
 
     }

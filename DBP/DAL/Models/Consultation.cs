@@ -11,13 +11,13 @@ namespace DAL.Models
     {
         public string ConsultationDate { get; set; }
         public int Duration { get; set; }
-
+        [ForeignKey("Teacher")]
         public int TeacherId { get; set; }
-        [ForeignKey("TeacherId")]
+        
         public virtual Teacher Teacher { get; set; }
-
+        [ForeignKey("Student")]
         public int StudentId { get; set; }
-        [ForeignKey("StudentId")]
+        
         public virtual Student Student { get; set; }
     }
 }

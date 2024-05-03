@@ -12,13 +12,15 @@ namespace DAL.Models
     {
         public string OfferInformation { get; set; } = string.Empty;
         [Required]
+        [ForeignKey("Company")]
         public int CompanyId { get; set; }
-        [ForeignKey("CompanyId")]
+        
         public Company Company { get; set; }
 
         [Required]
+        [ForeignKey("CareerCenter")]
         public int CareerCenterId { get; set; }
-        [ForeignKey("CareerCenterId")]
+       
         public CareerCenter CareerCenter { get; set; }
     }
 }

@@ -13,13 +13,15 @@ namespace DAL.Models
         public string PaymentMethodName { get; set; } = string.Empty;
 
         [Required]
+        [ForeignKey("BillingInformation")]
         public int BillingInformationId { get; set; }
-        [ForeignKey("BillingInformationId")]
+        
         public BillingInformation BillingInformation { get; set; }
 
         [Required]
+        [ForeignKey("Order")]
         public int OrderId { get; set; }
-        [ForeignKey("OrderId")]
+        
         public Order Order { get; set; }
     }
 

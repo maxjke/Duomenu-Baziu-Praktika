@@ -14,8 +14,9 @@ public class Lecture : Entity
     public string? Video { get; set; }
 
     [Required]
+    [ForeignKey("Course")]
     public int CourseId { get; set; }
-    [ForeignKey("CourseId")]
+    
     public Course Course { get; set; }
 
     [ForeignKey("Schedule")]
