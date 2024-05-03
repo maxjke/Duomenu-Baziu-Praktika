@@ -1,31 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using DAL.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Models
+public class Student : Entity
 {
-    public class Student : Entity
-    {
-        [ForeignKey("ContactInfo")]
-        public int? ContactInfoId { get; set; }
-        public ContactInfo? ContactInfo { get; set; }
+    [ForeignKey("ContactInfo")]
+    public int? ContactInfoId { get; set; }
+    public ContactInfo? ContactInfo { get; set; }
 
-        [Required]
-        [ForeignKey("Group")]
-        public int GroupId {  get; set; }
-        public Group Group { get; set; }
+    [Required]
+    [ForeignKey("Group")]
+    public int GroupId { get; set; }
+    public Group Group { get; set; }
 
+    [ForeignKey("Consultation")]
+    public int ConsultationId { get; set; }  // Исправлено
+    public Consultation Consultation { get; set; }
 
-        [ForeignKey("Consultation")]
-        public int ConsulatitonId { get; set; }
-        public Consultation Consultation { get; set; }
-
-        public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
-
-
-    }
+    public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 }

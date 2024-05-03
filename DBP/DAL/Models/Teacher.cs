@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using DAL.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Models
+public class Teacher : Entity
 {
-    public class Teacher : Entity
-    {
-        [ForeignKey("ContactInfo")]
-        public int? ContactInfoId { get; set; }
-        public ContactInfo? ContactInfo { get; set; }
+    [ForeignKey("ContactInfo")]
+    public int? ContactInfoId { get; set; }
+    public ContactInfo? ContactInfo { get; set; }
 
-        [Required]
-        [ForeignKey("Course")]
-        public int CourseId { get; set; }
+    [Required]
+    [ForeignKey("Course")]
+    public int CourseId { get; set; }
+    public virtual Course Course { get; set; }
 
-        public virtual Course Course { get; set; }
-
-        [ForeignKey("Consultation")]
-        public int ConsulatitonId {  get; set; }
-
-        public Consultation Consultation { get; set; }
-
-        
-    }
+    [ForeignKey("Consultation")]
+    public int ConsultationId { get; set; }  
+    public Consultation Consultation { get; set; }
 }
