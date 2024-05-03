@@ -23,5 +23,10 @@ namespace DAL.Models
         [ForeignKey("CourseId")]
         public Course Course { get; set;}
 
+        [ForeignKey("Schedule")]
+        public int ScheduleId {  get; set; }
+
+        public Schedule Schedule { get; set; }
+
     }
 }

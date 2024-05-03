@@ -8,19 +8,15 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Group : Entity
-    { 
-        public string GroupName { get; set; } = string.Empty;
-
-        public ICollection<Student> Students { get; set; } = new List<Student>();
+    public class Advertisement : Entity
+    {
+        public string Descrtiption { get; set; } = string.Empty;
 
         [Required]
         [ForeignKey("Course")]
         public int CourseId { get; set; }
 
-        public virtual Course Course { get; set; }
-
-
+        public virtual Course Course { get; set; }`
 
     }
 }
