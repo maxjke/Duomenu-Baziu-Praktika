@@ -12,6 +12,6 @@ namespace DAL.Models
 
         public string LectureTime {  get; set; } = string.Empty;
 
-        public virtual Lecture Lecture { get; set; }
+        public  Lecture Lecture { get; set; }
     }
 }

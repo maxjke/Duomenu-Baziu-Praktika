@@ -11,7 +11,6 @@ namespace DAL.Models
     {
         public string CompanyName { get; set; } = string.Empty;
 
-        [MaxLength(500)]
         public string CompanyDescription { get; set; } = string.Empty;
         
         public ICollection<CompanyOffer> CompanyOffers { get; set; } = new List<CompanyOffer>();

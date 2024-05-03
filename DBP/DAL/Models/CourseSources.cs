@@ -9,11 +9,10 @@ namespace DAL.Models
 {
     public class CourseSources : Entity
     {
-        [ForeignKey("Course")]
+     
         public int CourseId {  get; set; }
         public Course Course { get; set; }
 
-        [ForeignKey("InformationSource")]
         public int InformationSourceId { get; set; }
         public InformationSource InformationSource { get; set; }
     }

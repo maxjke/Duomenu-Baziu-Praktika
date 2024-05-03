@@ -4,23 +4,21 @@ using System.ComponentModel.DataAnnotations;
 
 public class Lecture : Entity
 {
-    [Required]
-    [MaxLength(100)]
+ 
     public string LectureName { get; set; } = string.Empty;
 
-    [MaxLength(500)]
+ 
     public string Description { get; set; } = string.Empty;
 
     public string? Video { get; set; }
 
-    [Required]
-    [ForeignKey("Course")]
+
     public int CourseId { get; set; }
     
     public Course Course { get; set; }
 
-    [ForeignKey("Schedule")]
-    public int ScheduleId { get; set; } // Убедитесь, что это поле всегда заполняется
+
+    public int ScheduleId { get; set; }
 
     public Schedule Schedule { get; set; }
 }

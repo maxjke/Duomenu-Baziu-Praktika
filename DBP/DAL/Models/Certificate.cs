@@ -8,8 +8,7 @@ public class Certificate : Entity
     public string CertificateDegree { get; set; } = string.Empty;
     public string ExpireDate { get; set; } = string.Empty;
 
-    [Required]
-    [ForeignKey("Course")]
-    public int CourseId { get; set; }  // Исправлено, теперь не nullable
-    public virtual Course? Course { get; set; }
+
+    public int? CourseId { get; set; }  // Исправлено, теперь не nullable
+    public Course? Course { get; set; }
 }

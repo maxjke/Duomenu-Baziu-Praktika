@@ -10,7 +10,7 @@ namespace DAL.Models
     {
         public string OrderNumber { get; set; } = string.Empty;
        
-        public virtual ICollection<PaymentMethod> PaymentMethods { get; set; } = new List<PaymentMethod>();
+        public  ICollection<PaymentMethod> PaymentMethods { get; set; } = new List<PaymentMethod>();
     }
 
 }

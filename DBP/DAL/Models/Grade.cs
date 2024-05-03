@@ -10,10 +10,9 @@ namespace DAL.Models
 {
     public class Grade : Entity
     {
-        [Required]
+     
         public int GradeValue {  get; set; }
 
-        [ForeignKey("Student")]
         public int StudentId {  get; set; }
 
         public Student? Student {  get; set; }

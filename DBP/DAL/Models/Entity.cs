@@ -9,7 +9,7 @@ namespace DAL.Models
 {   
     public class Entity
     {
-        [Key]
+
         public int Id { get; set; }
     }
 }
