@@ -1,3 +1,6 @@
+using DAL;
+using DAL.Interfaces;
+
 namespace DBP
 {
     public class Program
@@ -6,8 +9,11 @@ namespace DBP
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IDbHelper, DbHelper>();
+
+            builder.Services.AddMvc();
 
             var app = builder.Build();
 
@@ -29,6 +35,8 @@ namespace DBP
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            DbHelper.ConnString = app.Configuration["ConnectionStrings:Default"] ?? "";
 
             app.Run();
         }
