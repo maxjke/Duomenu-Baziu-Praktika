@@ -1,4 +1,5 @@
 using DAL;
+using DAL.Implementations;
 using DAL.Interfaces;
 
 namespace DBP
@@ -11,7 +12,14 @@ namespace DBP
 
             builder.Services.AddControllersWithViews();
 
+            // BL
+
+
+            // DAL
             builder.Services.AddScoped<IDbHelper, DbHelper>();
+            builder.Services.AddScoped<IAdvertisementDAL, AdvertisementDAL>();
+            builder.Services.AddScoped<ICompanyDAL, CompanyDAL>();
+
 
             builder.Services.AddMvc();
 
