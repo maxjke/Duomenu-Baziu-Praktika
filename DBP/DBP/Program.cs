@@ -19,6 +19,8 @@ namespace DBP
             builder.Services.AddScoped<IDbHelper, DbHelper>();
             builder.Services.AddScoped<IAdvertisementDAL, AdvertisementDAL>();
             builder.Services.AddScoped<ICompanyDAL, CompanyDAL>();
+            builder.Services.AddScoped<IBillingInformationDAL, BillingInformationDAL>();
+            
 
 
             builder.Services.AddMvc();
@@ -33,7 +35,7 @@ namespace DBP
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

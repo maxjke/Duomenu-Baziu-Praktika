@@ -13,7 +13,7 @@ public class Student : Entity
     public Group Group { get; set; }
 
 
-    public int ConsultationId { get; set; }  // Исправлено
+    public int ConsultationId { get; set; }  
     public Consultation Consultation { get; set; }
 
     public ICollection<Grade> Grades { get; set; } = new List<Grade>();
