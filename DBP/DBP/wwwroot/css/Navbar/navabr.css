@@ -1,0 +1,28 @@
+﻿.navbar {
+    width: 100%;
+    z-index: 20;
+    height: 80px;
+    background-color: black;
+    border-bottom: 10px solid;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, violet, yellow, lightblue);
+    border-image-slice: 1;
+}
+
+    .navbar a{
+        color: white;
+        font-weight: 500;
+    }
+
+        .navbar a:hover {
+            color: #ffff99;
+            transition: color 0.5s;
+        }
+
+.navbar-brand {
+    width: 70px;
+}
+
+    .navbar-brand img{
+        height: 80px;
+    }

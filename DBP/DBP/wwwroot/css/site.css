@@ -14,5 +14,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-top: 70px;
+    background: white;
+    margin-bottom: 60px;
 }
