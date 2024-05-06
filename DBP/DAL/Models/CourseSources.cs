@@ -10,10 +10,10 @@ namespace DAL.Models
     public class CourseSources : Entity
     {
      
-        public int CourseId {  get; set; }
+        public int course_id {  get; set; }
         public Course Course { get; set; }
 
-        public int InformationSourceId { get; set; }
+        public int InformationSource_id { get; set; }
         public InformationSource InformationSource { get; set; }
     }
 }

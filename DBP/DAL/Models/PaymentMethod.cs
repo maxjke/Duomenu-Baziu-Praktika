@@ -12,13 +12,7 @@ namespace DAL.Models
     {
         public string PaymentMethodName { get; set; } = string.Empty;
 
-        
-        public int BillingInformationId { get; set; }
-        
-        public BillingInformation BillingInformation { get; set; }
-
-    
-        public int OrderId { get; set; }
+        public int order_id { get; set; }
         
         public Order Order { get; set; }
     }

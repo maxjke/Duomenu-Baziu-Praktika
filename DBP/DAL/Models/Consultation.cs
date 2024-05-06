@@ -11,10 +11,10 @@ namespace DAL.Models
     {
         public string ConsultationDate { get; set; }
         public int Duration { get; set; }
-        public int TeacherId { get; set; }
+        public int teacher_id { get; set; }
         public Teacher Teacher { get; set; }
 
-        public int StudentId { get; set; }
+        public int student_id { get; set; }
         public Student Student { get; set; }
     }
 }

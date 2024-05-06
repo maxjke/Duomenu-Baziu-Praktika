@@ -13,12 +13,12 @@ public class Lecture : Entity
     public string? Video { get; set; }
 
 
-    public int CourseId { get; set; }
+    public int course_id { get; set; }
     
     public Course Course { get; set; }
 
 
-    public int ScheduleId { get; set; }
+    public int schedule_id { get; set; }
 
     public Schedule Schedule { get; set; }
 }

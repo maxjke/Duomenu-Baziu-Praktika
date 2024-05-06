@@ -1,3 +1,7 @@
+using DAL;
+using DAL.Implementations;
+using DAL.Interfaces;
+
 namespace DBP
 {
     public class Program
@@ -6,8 +10,36 @@ namespace DBP
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // BL
+
+
+            // DAL
+            builder.Services.AddScoped<IDbHelper, DbHelper>();
+            builder.Services.AddScoped<IAdvertisementDAL, AdvertisementDAL>();
+            builder.Services.AddScoped<ICompanyDAL, CompanyDAL>();
+            builder.Services.AddScoped<IBillingInformationDAL, BillingInformationDAL>();
+            builder.Services.AddScoped<IAssingmentDAL, AssingmentDAL>();
+            builder.Services.AddScoped<ICareerCenterDAL, CareerCenterDAL>();
+            builder.Services.AddScoped<ICertificateDAL, CertificateDAL>();
+            builder.Services.AddScoped<ICompanyOfferDAL, CompanyOfferDAL>();
+            builder.Services.AddScoped<IConsultationDAL, ConsultationDAL>();
+            builder.Services.AddScoped<IContactInfoDAL, ContactInfoDAL>();
+            builder.Services.AddScoped<ICourseDAL, CourseDAL>();
+            builder.Services.AddScoped<IGradeDAL,GradeDAL>();
+            builder.Services.AddScoped<IGroupDAL, GroupDAL>();
+            builder.Services.AddScoped<IInformationSourceDAL, InformationSourceDAL>();
+            builder.Services.AddScoped<ILectureDAL,LectureDAL>();
+            builder.Services.AddScoped<IOrderDAL, OrderDAL>();
+            builder.Services.AddScoped<IPaymentMethodDAL,PaymentMethodDAL>();
+            builder.Services.AddScoped<IReviewDAL, ReviewDAL>();
+            builder.Services.AddScoped<IScheduleDAL, ScheduleDAL>();
+            builder.Services.AddScoped<IStudentDAL, StudentDAL>();
+            builder.Services.AddScoped<ITeacherDAL, TeacherDAL>();
+
+
+            builder.Services.AddMvc();
 
             var app = builder.Build();
 
@@ -19,7 +51,7 @@ namespace DBP
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -29,6 +61,8 @@ namespace DBP
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            DbHelper.ConnString = app.Configuration["ConnectionStrings:Default"] ?? "";
 
             app.Run();
         }

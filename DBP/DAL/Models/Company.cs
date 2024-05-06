@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Company : Entity
+    public class Company 
     {
+        public int idCompany { get; set; }
+
         public string CompanyName { get; set; } = string.Empty;
 
         public string CompanyDescription { get; set; } = string.Empty;
         
-        public ICollection<CompanyOffer> CompanyOffers { get; set; } = new List<CompanyOffer>();
     }
 }

@@ -4,17 +4,16 @@ using System.ComponentModel.DataAnnotations;
 
 public class Student : Entity
 {
-    public int? ContactInfoId { get; set; }
+    public int? contactinfo_id { get; set; }
     
     public ContactInfo ContactInfo { get; set; }
 
 
-    public int GroupId { get; set; }
+    public int group_id { get; set; }
     public Group Group { get; set; }
 
 
-    public int ConsultationId { get; set; }  // Исправлено
-    public Consultation Consultation { get; set; }
+   
 
     public ICollection<Grade> Grades { get; set; } = new List<Grade>();
 }

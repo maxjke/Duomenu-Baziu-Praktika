@@ -12,11 +12,11 @@ namespace DAL.Models
     {
         public string OfferInformation { get; set; } = string.Empty;
        
-        public int CompanyId { get; set; }
+        public int Company_id { get; set; }
         
         public Company Company { get; set; }
 
-        public int CareerCenterId { get; set; }
+        public int CareerCenter_id { get; set; }
        
         public CareerCenter CareerCenter { get; set; }
     }
