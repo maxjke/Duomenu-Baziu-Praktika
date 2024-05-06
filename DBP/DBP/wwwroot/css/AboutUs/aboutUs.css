@@ -7,4 +7,29 @@
 
 .about-us-row{
     display: flex;
+    gap: 30px;
 }
+
+.mission-cont, .vission-cont,
+.team-cont, .cooperation-cont {
+    width: 500px;
+}
+
+    .mission-cont h1, .vission-cont h1,
+    .team-cont h1, .cooperation-cont h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .mission-cont p, .vission-cont p,
+    .team-cont p, .cooperation-cont p {
+        text-align: center;
+        border: 2px solid lightgrey;
+        border-radius: 20px;
+        padding: 10px;
+        height: 200px;
+        align-content: center;
+        color: black;
+    }

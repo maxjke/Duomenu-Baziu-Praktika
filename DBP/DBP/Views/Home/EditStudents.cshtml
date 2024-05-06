@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Studentų tvarkymas";
+}
+
+<style>
+    table {
+
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+<form method="get" action="pasolnachui">
+    <input type="search" id="search" placeholder="Įveskite ID" />
+    <button type="submit" for="search">Ieškoti</button>
+</form>
+
+<div class="container" style="margin-top: 200px">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Adresas</th>
+                <th>Zip-kodas</th>
+                <th>E-paštas</th>
+                <th>Vardas</th>
+                <th>Pavarde</th>
+                <th>Telefono numeris</th>
+                <th>Šalis</th>
+                <th>Miestas</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+          @*   @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Address</td>
+                    <td>@item.Zipcode</td>
+                    <td>@item.Email</td>
+                    <td>@item.Name</td>
+                    <td>@item.Lastname</td>
+                    <td>@item.Phonenumber</td>
+                    <td>@item.Country</td>
+                    <td>@item.City</td>
+                </tr>
+            } *@
+        </tbody>
+    </table>
+
+    <h2>Registruoti nauja studentą</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label @* asp-for="Address" *@ class="control-label"></label>
+            <input@*  asp-for="Address" *@ class="form-control" placeholder="Enter address" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Zipcode" *@ class="control-label"></label>
+            <input@*  asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Email"  *@class="control-label"></label>
+            <input@*  asp-for="Email"  *@class="form-control" placeholder="Enter e-mail" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Name" *@ class="control-label"></label>
+            <input@*  asp-for="Name" *@ class="form-control" placeholder="Enter name" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Lastname"  *@class="control-label"></label>
+            <input@*  asp-for="Lastname" *@ class="form-control" placeholder="Enter lastname" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Phonenumber"  *@class="control-label"></label>
+            <input @* asp-for="Phonenumber"  *@class="form-control" placeholder="Enter phonenumber" />
+        </div>
+        <div class="form-group">
+            <label@*  asp-for="Country" *@ class="control-label"></label>
+            <input@*  asp-for="Country" *@ class="form-control" placeholder="Enter country" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="City" *@ class="control-label"></label>
+            <input@*  asp-for="City" *@ class="form-control" placeholder="Enter city" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+    <h2>Atnaujinti esamą studentą</h2>
+    <form asp-action="Update" method="post">
+        <div class="form-group">
+            <label @* asp-for="Id" *@ class="control-label"></label>
+            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter ID" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Address" *@ class="control-label"></label>
+            <input@* asp-for="Address" *@ class="form-control" placeholder="Enter address" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Zipcode" *@ class="control-label"></label>
+            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Email" *@class="control-label"></label>
+            <input@* asp-for="Email" *@class="form-control" placeholder="Enter e-mail" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Name" *@ class="control-label"></label>
+            <input@* asp-for="Name" *@ class="form-control" placeholder="Enter name" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Lastname" *@class="control-label"></label>
+            <input@* asp-for="Lastname" *@ class="form-control" placeholder="Enter lastname" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Phonenumber" *@class="control-label"></label>
+            <input @* asp-for="Phonenumber" *@class="form-control" placeholder="Enter phonenumber" />
+        </div>
+        <div class="form-group">
+            <label@* asp-for="Country" *@ class="control-label">
+                </label>
+                <input@* asp-for="Country" *@ class="form-control" placeholder="Enter country" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="City" *@ class="control-label"></label>
+            <input@* asp-for="City" *@ class="form-control" placeholder="Enter city" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <h2>Ištrinti esamą studentą</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label @* asp-for="Id" *@ class="control-label"></label>
+            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter Id" />
+        </div>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+</div>
+

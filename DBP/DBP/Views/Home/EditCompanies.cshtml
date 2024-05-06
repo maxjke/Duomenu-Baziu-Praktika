@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Įmonių tvarkymas";
+}
+
+
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+<form method="get" action="pasolnachui">
+    <input type="search" id="search" placeholder="Įveskite ID"/>
+    <button type="submit" for="search">Ieškoti</button>
+</form>
+
+<div class="container" style="margin-top: 200px">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Įmonės pavadinimas</th>
+                <th>Įmonės aprašymas</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @*   @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.CompanyName</td>
+                <td>@item.CompanyDescription</td>
+            </tr>
+            } *@
+        </tbody>
+    </table>
+
+    <h2>Registruoti nauja įmonę</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label @* asp-for="Address" *@ class="control-label"></label>
+            <input@* asp-for="Address" *@ class="form-control" placeholder="Įveskite kurso pavadinimą" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Zipcode" *@ class="control-label"></label>
+            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+    <h2>Atnaujinti esamą įmonę</h2>
+    <form asp-action="Update" method="post">
+        <div class="form-group">
+            <label @* asp-for="Id" *@ class="control-label"></label>
+            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter ID" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Address" *@ class="control-label"></label>
+            <input@* asp-for="Address" *@ class="form-control" placeholder="Enter address" />
+        </div>
+        <div class="form-group">
+            <label @* asp-for="Zipcode" *@ class="control-label"></label>
+            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <h2>Ištrinti esamą įmonę</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label @* asp-for="Id" *@ class="control-label"></label>
+            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter Id" />
+        </div>
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+</div>

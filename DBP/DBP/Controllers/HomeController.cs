@@ -23,6 +23,46 @@ namespace DBP.Controllers
             return View();
         }
 
+        public IActionResult CareerCenter()
+        {
+            return View();
+        }
+
+        public IActionResult Courses()
+        {
+            return View();
+        }
+
+        public IActionResult CoursesForCompanies()
+        {
+            return View();
+        }
+
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        public IActionResult EditStudents()
+        {
+            return View();
+        }
+
+        public IActionResult EditLecturers()
+        {
+            return View();
+        }
+
+        public IActionResult EditCompanies()
+        {
+            return View();
+        }
+
+        public IActionResult EditCourses()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
