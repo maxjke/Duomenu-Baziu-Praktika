@@ -28,7 +28,15 @@ namespace DBP
             builder.Services.AddScoped<IContactInfoDAL, ContactInfoDAL>();
             builder.Services.AddScoped<ICourseDAL, CourseDAL>();
             builder.Services.AddScoped<IGradeDAL,GradeDAL>();
-            
+            builder.Services.AddScoped<IGroupDAL, GroupDAL>();
+            builder.Services.AddScoped<IInformationSourceDAL, InformationSourceDAL>();
+            builder.Services.AddScoped<ILectureDAL,LectureDAL>();
+            builder.Services.AddScoped<IOrderDAL, OrderDAL>();
+            builder.Services.AddScoped<IPaymentMethodDAL,PaymentMethodDAL>();
+            builder.Services.AddScoped<IReviewDAL, ReviewDAL>();
+            builder.Services.AddScoped<IScheduleDAL, ScheduleDAL>();
+            builder.Services.AddScoped<IStudentDAL, StudentDAL>();
+            builder.Services.AddScoped<ITeacherDAL, TeacherDAL>();
 
 
             builder.Services.AddMvc();

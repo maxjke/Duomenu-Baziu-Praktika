@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace DAL.Implementations
 {
-    public class GradeDAL : IGradeDAL
+    public class OrderDAL : IOrderDAL
     {
         private readonly IDbHelper dbHelper;
 
-        public GradeDAL(IDbHelper dbHelper)
+        public OrderDAL(IDbHelper dbHelper)
         {
             this.dbHelper = dbHelper;
         }
 
-        public async Task<Grade?> Get(int id)   
+        public async Task<Order?> Get(int id)
         {
-            string sql = "select * from Grade where id = @id";
+            string sql = @"select * from Order where id = @id";
 
-            return await dbHelper.QueryScalarAsync<Grade>(sql, new { id = id });
+            return await dbHelper.QueryScalarAsync<Order>(sql, new { id = id });
         }
     }
 }
+
