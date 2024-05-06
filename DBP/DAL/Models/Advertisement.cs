@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 public class Advertisement 
 {
    
-    public int CourseId { get; set; } 
+    public int course_id { get; set; } 
     public  Course Course { get; set; }
     public string Description { get; set; } = string.Empty;  
 }

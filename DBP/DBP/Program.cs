@@ -20,6 +20,14 @@ namespace DBP
             builder.Services.AddScoped<IAdvertisementDAL, AdvertisementDAL>();
             builder.Services.AddScoped<ICompanyDAL, CompanyDAL>();
             builder.Services.AddScoped<IBillingInformationDAL, BillingInformationDAL>();
+            builder.Services.AddScoped<IAssingmentDAL, AssingmentDAL>();
+            builder.Services.AddScoped<ICareerCenterDAL, CareerCenterDAL>();
+            builder.Services.AddScoped<ICertificateDAL, CertificateDAL>();
+            builder.Services.AddScoped<ICompanyOfferDAL, CompanyOfferDAL>();
+            builder.Services.AddScoped<IConsultationDAL, ConsultationDAL>();
+            builder.Services.AddScoped<IContactInfoDAL, ContactInfoDAL>();
+            builder.Services.AddScoped<ICourseDAL, CourseDAL>();
+            builder.Services.AddScoped<IGradeDAL,GradeDAL>();
             
 
 

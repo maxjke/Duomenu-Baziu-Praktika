@@ -9,6 +9,6 @@ public class Certificate : Entity
     public string ExpireDate { get; set; } = string.Empty;
 
 
-    public int? CourseId { get; set; }  // Исправлено, теперь не nullable
+    public int? course_id { get; set; }  
     public Course? Course { get; set; }
 }

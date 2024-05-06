@@ -12,6 +12,7 @@ namespace DAL.Models
         public string CardHolderName { get; set; } = string.Empty;
         public string ExpireDate { get; set; } = string.Empty;
 
+        public int paymentMethod_id;
       
     }
 }

@@ -19,7 +19,7 @@ namespace DAL.Implementations
 
         public async Task<Company?> Get(int idCompany)
         {
-            string sql = "select idCompany, CompanyName, CompanyDescription where idCompany = @idCompany";
+            string sql = "select id, CompanyName, CompanyDescription where idCompany = @idCompany";
 
             return await dbHelper.QueryScalarAsync<Company>(sql,new {idCompany = idCompany});
         }

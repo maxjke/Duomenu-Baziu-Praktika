@@ -15,7 +15,7 @@ namespace DAL.Models
         public ICollection<Student> Students { get; set; } = new List<Student>();
 
        
-        public int CourseId { get; set; }
+        public int Course_id { get; set; }
 
         public Course Course { get; set; }
 

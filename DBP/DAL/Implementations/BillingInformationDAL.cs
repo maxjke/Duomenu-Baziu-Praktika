@@ -17,7 +17,7 @@ namespace DAL.Implementations
         }
         public async Task<BillingInformation?> Get(int idbillinginformation)
         {
-            string sql = @"select * from BillingInformation where idbillinginformation = @idbillinginformation";
+            string sql = @"select * from BillingInformation where id = @idbillinginformation";
 
             return await dbHelper.QueryScalarAsync<BillingInformation>(sql, new { idbillinginformation = idbillinginformation });
         }

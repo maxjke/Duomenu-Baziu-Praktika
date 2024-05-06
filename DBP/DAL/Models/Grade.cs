@@ -17,5 +17,7 @@ namespace DAL.Models
 
         public Student? Student {  get; set; }
 
+        public int Assingment_id { get; set; }
+
     }
 }
