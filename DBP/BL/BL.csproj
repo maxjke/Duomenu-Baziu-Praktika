@@ -9,7 +9,10 @@
   <ItemGroup>
     <Folder Include="Courses\" />
     <Folder Include="Lectures\" />
-    <Folder Include="Persons\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
   </ItemGroup>
 
 </Project>

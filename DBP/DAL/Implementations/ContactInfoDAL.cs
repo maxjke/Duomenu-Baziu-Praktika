@@ -23,5 +23,14 @@ namespace DAL.Implementations
 
             return await dbHelper.QueryScalarAsync<ContactInfo>(sql, new { id = id });
         }
+
+        public async Task<int> Create(ContactInfo contactInfo)
+        {
+            string sql = @"insert into ContactInfo(address,zipcode,`e-mail`,name,lastname,phonenumber,country,city)
+                            values(@Address, @Zipcode, @Email, @Name, @LastName, @PhoneNumber, @Country, @City);
+                            SELECT LAST_INSERT_ID();";
+
+            return await dbHelper.QueryScalarAsync<int>(sql, contactInfo);
+        }
     }
 }

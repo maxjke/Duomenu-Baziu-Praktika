@@ -56,44 +56,45 @@
     </table>
 
     <h2>Registruoti nauja studentą</h2>
-    <form asp-action="Create" method="post">
+
+    <form action="/create-student" method="post">
         <div class="form-group">
             <label @* asp-for="Address" *@ class="control-label"></label>
-            <input@*  asp-for="Address" *@ class="form-control" placeholder="Enter address" />
+            <input @*  asp-for="Address" *@ class="form-control" placeholder="Enter address" id="Address" name="Address"/>
         </div>
         <div class="form-group">
             <label @* asp-for="Zipcode" *@ class="control-label"></label>
-            <input@*  asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" id="Zipcode" name="Zipcode" />
         </div>
         <div class="form-group">
             <label @* asp-for="Email"  *@class="control-label"></label>
-            <input@*  asp-for="Email"  *@class="form-control" placeholder="Enter e-mail" />
+            <input@* asp-for="Email" *@class="form-control" placeholder="Enter e-mail" id="Email" name="Email" />
         </div>
         <div class="form-group">
             <label @* asp-for="Name" *@ class="control-label"></label>
-            <input@*  asp-for="Name" *@ class="form-control" placeholder="Enter name" />
+            <input@* asp-for="Name" *@ class="form-control" placeholder="Enter name" id="Name" name="Name" />
         </div>
         <div class="form-group">
             <label @* asp-for="Lastname"  *@class="control-label"></label>
-            <input@*  asp-for="Lastname" *@ class="form-control" placeholder="Enter lastname" />
+            <input@* asp-for="Lastname" *@ class="form-control" placeholder="Enter lastname" id="LastName" name="LastName" />
         </div>
         <div class="form-group">
             <label @* asp-for="Phonenumber"  *@class="control-label"></label>
-            <input @* asp-for="Phonenumber"  *@class="form-control" placeholder="Enter phonenumber" />
+            <input @* asp-for="Phonenumber" *@class="form-control" placeholder="Enter phonenumber" id="PhoneNumber" name="PhoneNumber" />
         </div>
         <div class="form-group">
             <label@*  asp-for="Country" *@ class="control-label"></label>
-            <input@*  asp-for="Country" *@ class="form-control" placeholder="Enter country" />
+            <input@*  asp-for="Country" *@ class="form-control" placeholder="Enter country" name="Country"/>
         </div>
         <div class="form-group">
             <label @* asp-for="City" *@ class="control-label"></label>
-            <input@*  asp-for="City" *@ class="form-control" placeholder="Enter city" />
+            <input@*  asp-for="City" *@ class="form-control" placeholder="Enter city" name="City"/>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 
     <h2>Atnaujinti esamą studentą</h2>
-    <form asp-action="Update" method="post">
+    <form action="Update" method="post">
         <div class="form-group">
             <label @* asp-for="Id" *@ class="control-label"></label>
             <input@* asp-for="Id" *@ class="form-control" placeholder="Enter ID" />

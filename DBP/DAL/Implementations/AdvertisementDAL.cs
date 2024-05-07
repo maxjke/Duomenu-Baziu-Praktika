@@ -18,7 +18,7 @@ namespace DAL.Implementations
 
         public async Task<Advertisement?> Get(int idAdvertisement)
         {
-            string sql = @"select * from Advertisement where idAdverisement = @idAdvertisement";
+            string sql = @"select * from Advertisement where idAdverisement = @idAdvertisement ";
 
             return await dbHelper.QueryScalarAsync<Advertisement>(sql, new { idAdvertisement = idAdvertisement });
         }

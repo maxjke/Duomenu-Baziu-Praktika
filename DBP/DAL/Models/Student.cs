@@ -6,11 +6,11 @@ public class Student : Entity
 {
     public int? contactinfo_id { get; set; }
     
-    public ContactInfo ContactInfo { get; set; }
+    public ContactInfo ContactInfo { get; set; } = new ContactInfo();
 
 
     public int group_id { get; set; }
-    public Group Group { get; set; }
+    public Group Group { get; set; } = new Group();
 
 
    

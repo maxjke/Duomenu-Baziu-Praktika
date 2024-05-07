@@ -1,3 +1,4 @@
+using BL.Persons;
 using DAL;
 using DAL.Implementations;
 using DAL.Interfaces;
@@ -13,6 +14,7 @@ namespace DBP
             builder.Services.AddControllersWithViews();
 
             // BL
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
 
             // DAL

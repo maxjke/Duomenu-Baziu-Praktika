@@ -1,16 +1,13 @@
-﻿using DAL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Interfaces
+namespace BL.Persons
 {
-    public interface IStudentDAL
+    public interface IStudentRepository
     {
-        Task<Student?> Get(int id);
-
         Task Create(Student student);
     }
 }
