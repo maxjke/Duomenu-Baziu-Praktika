@@ -10,5 +10,6 @@ namespace DAL.Interfaces
     public interface IContactInfoDAL
     {
         Task<ContactInfo?> Get(int id);
+        Task<int> Create(ContactInfo contactInfo);
     }
 }

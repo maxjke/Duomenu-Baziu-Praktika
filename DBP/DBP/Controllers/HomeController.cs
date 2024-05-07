@@ -1,16 +1,45 @@
 ﻿using DBP.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using BL.Persons;
+using DAL.Models;
 
 namespace DBP.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IStudentRepository studRepo;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IStudentRepository studRepo)
         {
             _logger = logger;
+            this.studRepo = studRepo;
+        }
+
+        [HttpPost]
+        [Route("/create-student")]
+        public async Task<IActionResult> CreateStudent(StudentViewModel student)
+        {
+            var studentModel = new Student()
+            {
+                ContactInfo = new ContactInfo()
+                {
+                    Address = student.Address,
+                    Zipcode = student.Zipcode,
+                    Email = student.Email,
+                    City = student.City,
+                    Name = student.Name,
+                    LastName = student.LastName,
+                    PhoneNumber = student.PhoneNumber,
+                    Country = student.Country
+                }
+            };
+
+
+           await studRepo.Create(studentModel);
+
+           return  View("EditStudents");
         }
 
         public IActionResult Index()

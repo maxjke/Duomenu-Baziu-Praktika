@@ -23,5 +23,12 @@ namespace DAL.Implementations
 
             return await dbHelper.QueryScalarAsync<Student>(sql, new { id = id });
         }
+
+        public async Task Create(Student student)
+        {
+            string sql = "insert into Student(group_id,contactinfo_id) values(1,@contactinfo_id)";
+
+            await dbHelper.ExecuteAsync(sql, new { contactinfo_id = student.contactinfo_id });
+        }
     }
 }
