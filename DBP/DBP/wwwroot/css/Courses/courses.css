@@ -1,2 +1,97 @@
-﻿body {
+﻿
+.course-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.course-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    width: 350px;
+    height: 672px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.course-img {
+    width: 320px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.course-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+    max-width: 350px;
+    height: 500px;
+}
+
+    .course-container h1 {
+        font-size: 20px;
+    }
+
+.course-info-container h2{
+    font-size: 20px;
+}
+
+.confirm-buy-in {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    margin-top: 20px;
+    margin-right: 15px;
+    padding: 0px 25px 0px 25px;
+}
+
+    .confirm-buy-in:hover {
+        color: black;
+        background-color: #ffff99;
+        transition: 0.2s ease-in;
+        padding: 0px 35px 0px 35px;
+    }
+
+.course-note {
+    border: 2px solid lightgrey;
+    border-radius: 20px 2px;
+    padding: 5px 25px 1px 25px;
+    text-align: center;
+}
+
+    .course-note h3 {
+        font-size: 20px;
+    }
+
+@media (max-width: 1000px) {
+    .course-row {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 50%;
+    }
 }

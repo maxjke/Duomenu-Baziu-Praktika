@@ -2,8 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="~/css/PromoSlider/promoSlider.css" />
 <link rel="stylesheet" href="~/css/AboutUs/aboutUs.css" />
 <link rel="stylesheet" href="~/css/HomePage/homePage.css" />
+
+<div class="slider">
+    <div class="slides">
+        <img src="~/Images/HomePage/PromoSlides/PromoSlide (1).jpg" alt="Photo 1">
+        <img src="~/Images/HomePage/PromoSlides/PromoSlide (2).jpg" alt="Photo 2">
+    </div>
+    <button class="arrow prev">&#10094;</button>
+    <div class="add-info">Vieta reklamai</div>
+    <button class="arrow next">&#10095;</button>
+</div>
 
 <div class="container">
     <div class="cont-1">
@@ -20,8 +31,7 @@
                 kurie skirti tiek pradedantiesiems, tiek pažengusiems kūrėjams.
             </p>
         </div>
-
-        <button>Peržiūrėti</button>
+        <a asp-area="" asp-controller="Home" asp-action="Courses">Peržiūrėti</a>
     </div>
 
     <div class="cont-3">
@@ -37,8 +47,7 @@
                 plėsdami savo darbuotojų žinias ir ugdykite naujas kompetencijas mūsų pritaikytose mokymosi programose.
             </p>
         </div>
-
-        <button>Peržiūrėti</button>
+        <a asp-area="" asp-controller="Home" asp-action="CoursesForCompanies">Peržiūrėti</a>
     </div>
 
     <div class="cont-2">
@@ -54,13 +63,12 @@
                 kuris atitinka Jūsų poreikius ir užtikrina maksimalų mokymosi efektyvumą.
             </p>
         </div>
-
-        <button>Peržiūrėti</button>
+        <a asp-area="" asp-controller="Home" asp-action="Courses">Peržiūrėti</a>
     </div>
 </div>
 
 <div class="about-us-container">
-    <h1>
+    <h1 class="about-us-h" id="AboutUs">
         Apie Mus
     </h1>
 
@@ -104,3 +112,5 @@
         </div>
     </div>
 </div>
+
+<script src="~/js/promoSlider.js"></script>

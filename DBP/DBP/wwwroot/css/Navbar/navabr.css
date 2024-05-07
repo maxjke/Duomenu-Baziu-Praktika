@@ -1,28 +1,44 @@
 ﻿.navbar {
     width: 100%;
-    z-index: 20;
+    z-index: 120;
     height: 80px;
     background-color: black;
-    border-bottom: 10px solid;
     border-bottom: 5px solid;
     border-image: linear-gradient(to right, violet, yellow, lightblue);
     border-image-slice: 1;
 }
 
-    .navbar a{
+    .navbar a {
         color: white;
         font-weight: 500;
     }
 
-        .navbar a:hover {
+        .navbar a:hover{
             color: #ffff99;
             transition: color 0.5s;
         }
 
 .navbar-brand {
     width: 70px;
+    margin: 0;
 }
 
     .navbar-brand img{
         height: 80px;
+        margin-right: -20px;
     }
+
+.navbar-nav{
+    margin-left: 150px;
+}
+
+.navbar span {
+    display: inline-block;
+    line-height: 1;
+    margin-top: -10px;
+    color: violet;
+}
+
+.brand-second-line{
+    
+}

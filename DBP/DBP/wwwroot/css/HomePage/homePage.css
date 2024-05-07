@@ -7,7 +7,7 @@
     margin-bottom: 30px;
 }
 
-    .container button {
+    .container a {
         color: black;
         font-weight: 600;
         font-size: 20px;
@@ -15,9 +15,11 @@
         border: none;
         background: white;
         margin-top: 20px;
+        text-align: center;
+        text-decoration: none;
     }
 
-    .container button:hover {
+    .container a:hover {
         color: black;
         margin-bottom: 5px;
         background-color: #ffff99;
