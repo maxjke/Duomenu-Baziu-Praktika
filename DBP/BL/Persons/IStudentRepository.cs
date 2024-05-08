@@ -12,5 +12,10 @@ namespace BL.Persons
         Task Create(Student student);
 
         Task<List<ContactInfo>> FindAll();
+
+        Task Update(ContactInfo student);
+
+        Task<Student?> Get(int id);
+
     }
 }

@@ -28,6 +28,11 @@ namespace BL.Persons
             await teacherDAL.Create(teacher);
         }
 
+        public async Task Delete(Teacher teacher)
+        {
+            await teacherDAL.Delete(teacher.Id);
+        }
+
         public async Task Update(Teacher teacher)
         {
             var contId=await contactInfo.Update(teacher.ContactInfo);

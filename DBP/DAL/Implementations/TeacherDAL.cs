@@ -27,6 +27,12 @@ namespace DAL.Implementations
             await dbHelper.ExecuteAsync(sql, new { contactinfo_id = teacher.contactinfo_id });
         }
 
+        public async Task Delete(int id)
+        {
+            string sql = "delete from Teacher where id = @Id";
+            await dbHelper.ExecuteAsync(sql, new { Id = id });
+        }
+
         public async Task<Teacher?> Get(int id)
         {
             string sql = "select * from Teacher where id = @id";

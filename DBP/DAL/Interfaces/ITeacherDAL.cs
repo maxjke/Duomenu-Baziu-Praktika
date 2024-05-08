@@ -13,5 +13,7 @@ namespace DAL.Interfaces
 
         Task Create(Teacher teacher);
         Task Update(Teacher teacher,int id);
+
+        Task Delete(int id);
     }
 }
