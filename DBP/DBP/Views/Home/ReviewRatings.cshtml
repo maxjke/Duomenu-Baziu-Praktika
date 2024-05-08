@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Paskaitų verinimo peržiūra";
+}
+
+<link rel="stylesheet" href="~/css/Admin/admin.css" />
+
+<table style="margin-top: 120px; margin-bottom: 50px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kurso įvertinimas (1-5)</th>
+            <th>Įvertinto kurso ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @*   @foreach (var item in Model)
+        {
+        <tr>
+        <td>@item.ID</td>
+        <td>@item.CourseRating</td>
+        <td>@item.CourseId</td>
+        </tr>
+        } *@
+    </tbody>
+</table>
+
+<div class="form-container" style="margin-bottom: 250px">
+    <div class="form-check-in">
+        <h2>Ištrinti esamą įvertinimą</h2>
+        <form class="form-check-in-form" asp-action="Create" method="post">
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input class="form-control" placeholder="Įveskite ID" />
+            </div>
+            <div class="form-button">
+                <button type="submit" class="btn btn-primary">Ištrinti</button>
+            </div>
+        </form>
+    </div>
+</div>
+

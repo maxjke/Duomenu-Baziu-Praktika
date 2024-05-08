@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Paskaitų verinimas";
+}
+
+<link rel="stylesheet" href="~/css/CourseRating/courseRating.css" />
+
+<div class="rating-container-main">
+    <h2>Įvertinkite kursų kokybė</h2>
+
+    <form class="rating-container" action="/ivertinimas" method="post" id="ratingForm">
+
+        <select name="course" id="course">
+            <option value="WEB kūrimo mokymai">WEB kūrimo mokymai</option>
+            <option value="UX/UI WEB dizaino mokymai">UX/UI WEB dizaino mokymai</option>
+            <option value="Duomenų analitika ir python programavimo pagrindai">Duomenų analitika ir python programavimo pagrindai</option>
+            <option value="Automatinio ir rankinio testavimo mokymai">Automatinio ir rankinio testavimo mokymai</option>
+            <option value="WEB dizainas ir front-end programavimo pagrindai">WEB dizainas ir front-end programavimo pagrindai</option>
+            <option value="Java-script mokymai">Java-script mokymai</option>
+        </select>
+
+        <div class="star-rating">
+            <input type="radio" id="5-stars" name="rating" value="5" />
+            <label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" id="4-stars" name="rating" value="4" />
+            <label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" id="3-stars" name="rating" value="3" />
+            <label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" id="2-stars" name="rating" value="2" />
+            <label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" id="1-star" name="rating" value="1" />
+            <label for="1-star" class="star">&#9733;</label>
+        </div>
+    </form>
+</div>
+
+<script src="~/js/courseRaing.js"/>

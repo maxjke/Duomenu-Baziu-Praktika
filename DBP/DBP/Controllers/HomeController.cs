@@ -106,6 +106,16 @@ namespace DBP.Controllers
             return View();
         }
 
+        public IActionResult CourseRating()
+        {
+            return View();
+        }
+
+        public IActionResult ReviewRatings()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
