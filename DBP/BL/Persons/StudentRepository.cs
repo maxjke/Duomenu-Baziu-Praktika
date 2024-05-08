@@ -34,5 +34,15 @@ namespace BL.Persons
             var x = ((await studentDal.GetAll()).Select(x =>x.contactinfo_id) ).ToList();
             return await contactInfo.GetAll(x);
         }
+
+        public async Task Update(ContactInfo student)
+        {
+           await contactInfo.Update(student);
+        }
+
+        public async Task<Student?> Get(int id)
+        {
+            return await studentDal.Get(id);
+        }
     }
 }

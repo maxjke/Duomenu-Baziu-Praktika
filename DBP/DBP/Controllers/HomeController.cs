@@ -46,6 +46,32 @@ namespace DBP.Controllers
 
            return  View("EditStudents");
         }
+
+
+        [HttpPost]
+        [Route("/update-student")]
+        public async Task<IActionResult> UpdateStudent(StudentViewModel model)
+        {
+            var student = await studRepo.Get(model.Id);
+
+
+            await studRepo.Update(new ContactInfo()
+            {
+                Id = (int)student.contactinfo_id,
+                Name = model.Name,
+                Address = model.Address,
+                City = model.City,
+                Country = model.Country,
+                Zipcode = model.Zipcode,
+                Email = model.Email,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber
+            });
+
+            return Redirect("/Home/EditStudents");
+        }
+
+
         [HttpPost]
         [Route("/create-teacher")]
         public async Task <IActionResult> CreateTeacher(TeacherViewModel teacher)

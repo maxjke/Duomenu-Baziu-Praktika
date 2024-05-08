@@ -12,5 +12,6 @@ namespace DAL.Interfaces
         Task<ContactInfo?> Get(int id);
         Task<List<ContactInfo>> GetAll(List<int?> id);
         Task<int> Create(ContactInfo contactInfo);
+        Task Update(ContactInfo info);
     }
 }

@@ -48,5 +48,22 @@ namespace DAL.Implementations
             }
             return list;
         }
+
+
+        public async Task Update(ContactInfo info)
+        {
+            string sql = "UPDATE ContactInfo " +
+                         "SET name = @Name, " +   
+                         "lastname = @LastName, " +
+                         "email = @Email, " +
+                         "phonenumber = @PhoneNumber, " +
+                         "address = @Address, " +
+                         "city = @City, " +
+                         "country = @Country, " +
+                         "zipcode = @Zipcode " +
+                         "WHERE id = @Id";
+
+            await dbHelper.ExecuteAsync(sql, info);
+        }
     }
 }

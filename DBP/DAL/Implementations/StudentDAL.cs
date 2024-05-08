@@ -37,5 +37,15 @@ namespace DAL.Implementations
 
             return (await dbHelper.QueryAsync<Student>(sql, new { })).ToList();
         }
+
+        public async Task Update(Student student)
+        {
+            string sql = "UPDATE Student" +
+                         "SET group_id = @groupId" +
+                         "SET contactinfo_id = @contactinfo_id" +
+                         "WHERE id = @Id";
+
+            await dbHelper.ExecuteAsync(sql, new { contactinfo_id = student.contactinfo_id, group_id = student.group_id, Id = student.Id });
+        }
     }
 }
