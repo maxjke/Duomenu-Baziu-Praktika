@@ -1,0 +1,30 @@
+﻿.selection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    padding: 20px;
+}
+
+    .selection-container a {
+        font-size: 30px;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        min-width: 800px;
+        text-align: center;
+        border: 2px solid lightgrey;
+        border-radius: 20px;
+        box-shadow: lightgrey 0px 0px 10px;
+    }
+
+        .selection-container a:hover {
+            color: black;
+            margin-bottom: 5px;
+            background-color: #ffff99;
+            transition: 0.3s ease-out;
+            box-shadow: none;
+        }
