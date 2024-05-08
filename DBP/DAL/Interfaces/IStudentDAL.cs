@@ -13,5 +13,7 @@ namespace DAL.Interfaces
         Task<List<Student>> GetAll();
         Task Create(Student student);
         Task Update(Student student);
+        Task DeleteStudent(int id);
+        Task DeleteContact(int id);
     }
 }

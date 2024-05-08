@@ -49,6 +49,16 @@ namespace DBP.Controllers
 
 
         [HttpPost]
+        [Route("/delete-student")]
+        public async Task<IActionResult> DeleteStudent(int id)
+        {
+            await studRepo.Delete(id);
+
+            return Redirect("/Home/EditStudents");
+        }
+
+
+        [HttpPost]
         [Route("/update-student")]
         public async Task<IActionResult> UpdateStudent(StudentViewModel model)
         {
