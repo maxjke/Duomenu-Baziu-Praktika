@@ -3,8 +3,7 @@
     width: 100%;
     overflow: hidden;
     height: 500px;
-    margin-top: 15px;
-    border-radius: 20px;
+    margin-top: 10px;
     border: 2px solid black;
     border-bottom: 10px solid black;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -12,6 +11,7 @@
 
 .slides {
     display: flex;
+    object-fit: cover;
     transition: transform 0.5s ease;
     width: 200%; /* Adjust based on the number of images */
 }
@@ -61,8 +61,12 @@
 
 @media (max-width: 1000px) {
     .slides img {
-        width: 50%;
-        margin-top: 0.1px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .slides img {
         height: 600px;
     }
 }

@@ -15,6 +15,7 @@ html {
 
 body {
     margin-top: 70px;
-    background: azure;
+    /*background: azure;*/
+    background-color: #333333;
     margin-bottom: 60px;
 }

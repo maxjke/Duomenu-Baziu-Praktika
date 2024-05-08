@@ -83,6 +83,7 @@
 
     .course-note h3 {
         font-size: 20px;
+        color: white;
     }
 
 @media (max-width: 1000px) {
