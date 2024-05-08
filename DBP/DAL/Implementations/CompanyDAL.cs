@@ -23,5 +23,14 @@ namespace DAL.Implementations
 
             return await dbHelper.QueryScalarAsync<Company>(sql,new {idCompany = idCompany});
         }
+
+        public async Task Create(Company company)
+        {
+            string sql = "insert into Company(CompanyName,CompanyDescription) values(@companyname,@companydescription)";
+
+            await dbHelper.ExecuteAsync(sql, new {companyname = company.CompanyName,companydescription=company.CompanyDescription});
+        }
+
+        
     }
 }

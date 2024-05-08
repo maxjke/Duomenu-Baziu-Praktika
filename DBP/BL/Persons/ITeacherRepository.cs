@@ -1,16 +1,13 @@
-﻿using DAL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.Interfaces
+namespace BL.Persons
 {
-    public interface ITeacherDAL
+    public interface ITeacherRepository
     {
-        Task<Teacher?> Get(int id);
-
         Task Create(Teacher teacher);
     }
 }

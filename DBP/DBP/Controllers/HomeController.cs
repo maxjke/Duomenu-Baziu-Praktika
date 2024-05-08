@@ -10,11 +10,16 @@ namespace DBP.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IStudentRepository studRepo;
-
-        public HomeController(ILogger<HomeController> logger, IStudentRepository studRepo)
+        private readonly ITeacherRepository teacherRepo;
+        private readonly ICompanyRepository companyRepo;
+        private readonly ICourseRepository courseRepo;
+        public HomeController(ILogger<HomeController> logger, IStudentRepository studRepo, ITeacherRepository teacherRepo, ICompanyRepository companyRepo, ICourseRepository courseRepo)
         {
             _logger = logger;
             this.studRepo = studRepo;
+            this.teacherRepo = teacherRepo;
+            this.companyRepo = companyRepo;
+            this.courseRepo = courseRepo;
         }
 
         [HttpPost]
@@ -41,6 +46,60 @@ namespace DBP.Controllers
 
            return  View("EditStudents");
         }
+        [HttpPost]
+        [Route("/create-teacher")]
+        public async Task <IActionResult> CreateTeacher(TeacherViewModel teacher)
+        {
+            var teacherModel = new Teacher()
+            {
+                ContactInfo = new ContactInfo()
+                {
+                    Address = teacher.Address,
+                    Zipcode = teacher.Zipcode,
+                    Email = teacher.Email,
+                    City = teacher.City,
+                    Name = teacher.Name,
+                    LastName = teacher.LastName,
+                    PhoneNumber = teacher.PhoneNumber,
+                    Country = teacher.Country
+
+                }
+            };
+            await teacherRepo.Create(teacherModel);
+
+            return View("EditLecturers");
+        }
+
+        [HttpPost]
+        [Route("/create-company")]
+        public async Task<IActionResult> CreateCompany(CompanyViewModel company)
+        {
+            var companyModel = new Company()
+            {
+                CompanyName = company.CompanyName,
+                CompanyDescription = company.CompanyDescription
+            };
+            await companyRepo.Create(companyModel);
+
+            return View("EditCompanies");
+        }
+
+        [HttpPost]
+        [Route("/create-course")]
+        public async Task<IActionResult> CreateCourse(CourseViewModel course)
+        {
+            var courseModel = new Course()
+            {
+                CourseName = course.CourseName,
+                Duration = course.Duration,
+                Price = course.Price,
+
+            };
+            await courseRepo.Create(courseModel,course.TeacherName);
+
+            return View("EditCourses");
+        }
+       
 
         public IActionResult Index()
         {
@@ -72,9 +131,10 @@ namespace DBP.Controllers
             return View();
         }
 
-        public IActionResult EditStudents()
+        public async Task<IActionResult> EditStudents()
         {
-            return View();
+            var x = await studRepo.FindAll();
+            return View("EditStudents", x);
         }
 
         public IActionResult EditLecturers()

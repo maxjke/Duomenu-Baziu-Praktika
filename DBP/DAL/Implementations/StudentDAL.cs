@@ -30,5 +30,12 @@ namespace DAL.Implementations
 
             await dbHelper.ExecuteAsync(sql, new { contactinfo_id = student.contactinfo_id });
         }
+
+        public async Task<List<Student>> GetAll()
+        {
+            string sql = "select * from Student";
+
+            return (await dbHelper.QueryAsync<Student>(sql, new { })).ToList();
+        }
     }
 }

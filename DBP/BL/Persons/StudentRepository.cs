@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.Interfaces;
+using DAL.Models;
 
 namespace BL.Persons
 {
@@ -26,6 +27,12 @@ namespace BL.Persons
             student.contactinfo_id = contId;
 
             await studentDal.Create(student);
+        }
+
+        public async Task<List<ContactInfo>> FindAll()
+        {
+            var x = ((await studentDal.GetAll()).Select(x =>x.contactinfo_id) ).ToList();
+            return await contactInfo.GetAll(x);
         }
     }
 }

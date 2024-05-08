@@ -17,6 +17,13 @@ namespace DAL.Implementations
             this.dbHelper = dbHelper;
         }
 
+        public async Task Create(Teacher teacher)
+        {
+            string sql = "insert into Teacher(contactinfo_id) value(@contactinfo_id)";
+
+            await dbHelper.ExecuteAsync(sql, new { contactinfo_id = teacher.contactinfo_id });
+        }
+
         public async Task<Teacher?> Get(int id)
         {
             string sql = "select * from Teacher where id = @id";

@@ -10,7 +10,7 @@ namespace DAL.Interfaces
     public interface IStudentDAL
     {
         Task<Student?> Get(int id);
-
+        Task<List<Student>> GetAll();
         Task Create(Student student);
     }
 }

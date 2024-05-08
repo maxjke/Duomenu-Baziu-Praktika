@@ -32,5 +32,21 @@ namespace DAL.Implementations
 
             return await dbHelper.QueryScalarAsync<int>(sql, contactInfo);
         }
+
+        public async Task<List<ContactInfo>> GetAll(List<int?> id)
+        {
+            List<ContactInfo> list = new List<ContactInfo>();
+
+            string sql = "select * from ContactInfo where id = @Id";
+            foreach(var x in id)
+            {
+                var y = (await dbHelper.QueryScalarAsync<ContactInfo>(sql, new {Id=x}));
+                if(y != null)
+                {
+                    list.Add(y);
+                }
+            }
+            return list;
+        }
     }
 }

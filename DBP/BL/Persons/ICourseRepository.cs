@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace BL.Persons
 {
-    public interface IStudentRepository
+    public interface ICourseRepository
     {
-        Task Create(Student student);
-
-        Task<List<ContactInfo>> FindAll();
+        Task Create(Course course,string teacherName);
     }
 }

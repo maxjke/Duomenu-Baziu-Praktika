@@ -1,4 +1,6 @@
-﻿@{
+﻿@using DAL.Models
+@model List<ContactInfo>
+@{
     ViewData["Title"] = "Studentų tvarkymas";
 }
 
@@ -28,20 +30,20 @@
         </thead>
         
         <tbody>
-          @*   @foreach (var item in Model)
+             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.ID</td>
+                    <td>@item.Id</td>
                     <td>@item.Address</td>
                     <td>@item.Zipcode</td>
                     <td>@item.Email</td>
                     <td>@item.Name</td>
-                    <td>@item.Lastname</td>
-                    <td>@item.Phonenumber</td>
+                    <td>@item.LastName</td>
+                    <td>@item.PhoneNumber</td>
                     <td>@item.Country</td>
                     <td>@item.City</td>
                 </tr>
-            } *@
+            } 
         </tbody>
     </table>
 

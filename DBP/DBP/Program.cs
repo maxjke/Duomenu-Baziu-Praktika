@@ -15,6 +15,9 @@ namespace DBP
 
             // BL
             builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
+            builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 
             // DAL

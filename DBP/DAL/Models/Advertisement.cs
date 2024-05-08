@@ -7,5 +7,5 @@ public class Advertisement
    
     public int course_id { get; set; } 
     public  Course Course { get; set; }
-    public string Description { get; set; } = string.Empty;  
+    public string Information { get; set; } = string.Empty;  
 }

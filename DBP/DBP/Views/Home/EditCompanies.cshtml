@@ -36,14 +36,14 @@
     <div class="form-container">
         <div class="form-check-in">
             <h2>Registruoti nauja įmonę</h2>
-            <form class="form-check-in-form" asp-action="Create" method="post">
+            <form class="form-check-in-form" action="/create-company" method="post">
                 <div class="form-group">
                     <label class="control-label"></label>
-                    <input class="form-control" placeholder="Įveskite įmonės pavadinimą" />
+                    <input class="form-control" placeholder="Įveskite įmonės pavadinimą" id="CompanyName" name="CompanyName" />
                 </div>
                 <div class="form-group">
                     <label class="control-label"></label>
-                    <input class="form-control" placeholder="Įveskite įmonės aprašymą" />
+                    <input class="form-control" placeholder="Įveskite įmonės aprašymą" id="CompanyDescription" name="CompanyDescription" />
                 </div>
                 <div class="form-button">
                     <button type="submit" class="btn btn-primary">Registruoti</button>

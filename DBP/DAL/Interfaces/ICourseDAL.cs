@@ -10,5 +10,7 @@ namespace DAL.Interfaces
     public interface ICourseDAL
     {
         Task<Course?> Get(int id);
+
+        Task Create(Course course,string TeacherName);
     }
 }

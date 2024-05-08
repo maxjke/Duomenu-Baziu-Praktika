@@ -10,5 +10,7 @@ namespace DAL.Interfaces
     public interface ICompanyDAL
     {
         Task<Company?> Get(int idCompany);
+
+        Task Create(Company company);
     }
 }
