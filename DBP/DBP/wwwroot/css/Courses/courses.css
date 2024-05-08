@@ -79,6 +79,8 @@
     border-radius: 20px 2px;
     padding: 5px 25px 1px 25px;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #4d4d4d;
 }
 
     .course-note h3 {
