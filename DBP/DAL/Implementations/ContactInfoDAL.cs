@@ -37,7 +37,12 @@ namespace DAL.Implementations
         {
             List<ContactInfo> list = new List<ContactInfo>();
 
-            string sql = "select * from ContactInfo where id = @Id";
+            string sql = @"SELECT s.id, c.address, c.zipcode, c.email, c.name, c.lastname, c.phonenumber, c.country, c.city 
+                            FROM ContactInfo c
+                            JOIN Student s ON c.id = s.contactinfo_id
+                            WHERE c.id = @Id;";
+
+
             foreach(var x in id)
             {
                 var y = (await dbHelper.QueryScalarAsync<ContactInfo>(sql, new {Id=x}));

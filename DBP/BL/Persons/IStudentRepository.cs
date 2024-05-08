@@ -17,5 +17,6 @@ namespace BL.Persons
 
         Task<Student?> Get(int id);
 
+        Task Delete(int id);
     }
 }

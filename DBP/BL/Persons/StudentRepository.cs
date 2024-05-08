@@ -44,5 +44,16 @@ namespace BL.Persons
         {
             return await studentDal.Get(id);
         }
+
+        public async Task Delete(int id)
+        {
+            var student = await Get(id);
+
+                await studentDal.DeleteContact((int)student.contactinfo_id);
+
+                await studentDal.DeleteStudent(id);
+
+
+        }
     }
 }

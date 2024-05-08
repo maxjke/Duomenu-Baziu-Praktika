@@ -47,5 +47,21 @@ namespace DAL.Implementations
 
             await dbHelper.ExecuteAsync(sql, new { contactinfo_id = student.contactinfo_id, group_id = student.group_id, Id = student.Id });
         }
+
+        public async Task DeleteStudent(int id)
+        {
+            string sql = @"SET FOREIGN_KEY_CHECKS = 0;
+                            DELETE FROM Student WHERE id = @Id;";
+
+            await dbHelper.ExecuteAsync(sql, new { Id = id });
+        }
+
+        public async Task DeleteContact(int id)
+        {
+            string sql = @"SET FOREIGN_KEY_CHECKS = 0; 
+                            DELETE FROM ContactInfo WHERE id = @Id";
+
+            await dbHelper.ExecuteAsync(sql, new { Id = id });
+        }
     }
 }
