@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slidesContainer = document.querySelector('.slides');
     let index = 0;
-    const totalSlides = 2;
+    const totalSlides = 6;
     let slideInterval;
 
     function showSlide(idx) {
