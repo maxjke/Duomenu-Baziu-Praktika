@@ -166,6 +166,56 @@ namespace DBP.Controllers
             return View();
         }
 
+        public IActionResult CourseRating()
+        {
+            return View();
+        }
+
+        public IActionResult ReviewRatings()
+        {
+            return View();
+        }
+
+        public IActionResult AddStudentToAGroup()
+        {
+            return View();
+        }
+
+        public IActionResult StudentBoughtCourses()
+        {
+            return View();
+        }
+
+        public IActionResult Course_AT()
+        {
+            return View();
+        }
+
+        public IActionResult Course_WEB()
+        {
+            return View();
+        }
+
+        public IActionResult Course_UIUX()
+        {
+            return View();
+        }
+
+        public IActionResult Course_DAPY()
+        {
+            return View();
+        }
+
+        public IActionResult Course_WEB2()
+        {
+            return View();
+        }
+
+        public IActionResult Course_JS()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

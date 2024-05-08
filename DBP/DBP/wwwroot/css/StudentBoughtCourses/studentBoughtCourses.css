@@ -1,0 +1,25 @@
+﻿.course-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.course-container h1, h2{
+    color: white;
+}
+
+    .course-container h2{
+        font-size: 20px;
+    }
+
+    .video-container {
+        border: 2px solid black;
+        padding: 10px;
+        background-color: black;
+        border-radius: 20px;
+        box-shadow: #ffff99 0px 5px 15px;
+    }

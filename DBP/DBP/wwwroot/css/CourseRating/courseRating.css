@@ -1,0 +1,49 @@
+﻿.rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-container form{
+    height: 10px;
+}
+
+h2{
+    margin-top: 120px;
+    color: white;
+    text-align: center;
+}
+
+.rating-container select{
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.rating-heading {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.star-rating {
+    direction: rtl;
+    font-size: 30px;
+}
+
+    .star-rating > input {
+        display: none;
+    }
+
+    .star-rating > label {
+        color: white;
+        cursor: pointer;
+    }
+
+        .star-rating > label:hover,
+        .star-rating > label:hover ~ label,
+        .star-rating > input:checked ~ label {
+            color: gold;
+        }

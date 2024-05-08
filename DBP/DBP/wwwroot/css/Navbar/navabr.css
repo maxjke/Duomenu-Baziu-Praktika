@@ -39,6 +39,10 @@
     color: violet;
 }
 
+.break-point {
+    border-right: 2px solid #ff80ff;
+}
+
 .brand-second-line{
     
 }
