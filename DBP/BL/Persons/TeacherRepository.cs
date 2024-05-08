@@ -27,6 +27,15 @@ namespace BL.Persons
 
             await teacherDAL.Create(teacher);
         }
+
+        public async Task Update(Teacher teacher)
+        {
+            var contId=await contactInfo.Update(teacher.ContactInfo);
+
+            teacher.contactinfo_id=contId;
+
+            await teacherDAL.Update(teacher,teacher.Id);
+        }
     }
 }
 

@@ -12,5 +12,6 @@ namespace DAL.Interfaces
         Task<Teacher?> Get(int id);
 
         Task Create(Teacher teacher);
+        Task Update(Teacher teacher,int id);
     }
 }

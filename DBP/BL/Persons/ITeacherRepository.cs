@@ -9,5 +9,9 @@ namespace BL.Persons
     public interface ITeacherRepository
     {
         Task Create(Teacher teacher);
+
+        Task Update(Teacher teacher);
+
+        Task Delete(Teacher teacher);
     }
 }

@@ -26,7 +26,7 @@ namespace DAL.Implementations
 
         public async Task<int> Create(ContactInfo contactInfo)
         {
-            string sql = @"insert into ContactInfo(address,zipcode,`e-mail`,name,lastname,phonenumber,country,city)
+            string sql = @"insert into ContactInfo(address,zipcode,email,name,lastname,phonenumber,country,city)
                             values(@Address, @Zipcode, @Email, @Name, @LastName, @PhoneNumber, @Country, @City);
                             SELECT LAST_INSERT_ID();";
 
@@ -47,6 +47,16 @@ namespace DAL.Implementations
                 }
             }
             return list;
+        }
+
+        public async Task<int> Update(ContactInfo contactInfo)
+        {
+            string sql = " UPDATE `ContactInfo`" +
+                " SET `address` = @Address, `zipcode` = @Zipcode, `email` = @email, `name` = @Name, `lastname` = @Lastname" +
+                ", `phonenumber` = @Phonenumber, `country` = @Country, `city` = @City WHERE(`id` = @id);" +
+                " SELECT LAST_INSERT_ID();";
+
+            return await dbHelper.QueryScalarAsync<int>(sql, contactInfo);
         }
     }
 }
