@@ -1,4 +1,5 @@
-﻿.navbar {
+﻿@import url('../admin/admin.css');
+.navbar {
     width: 100%;
     z-index: 120;
     height: 80px;
