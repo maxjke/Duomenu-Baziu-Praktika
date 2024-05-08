@@ -1,4 +1,6 @@
-﻿using DAL.Interfaces;
+﻿using DAL.Implementations;
+using DAL.Interfaces;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,14 +35,17 @@ namespace BL.Persons
             await teacherDAL.Delete(teacher.Id);
         }
 
-        public async Task Update(Teacher teacher)
+        public async Task Update(ContactInfo teacher)
         {
-            var contId=await contactInfo.Update(teacher.ContactInfo);
-
-            teacher.contactinfo_id=contId;
-
-            await teacherDAL.Update(teacher,teacher.Id);
+            await contactInfo.Update(teacher);
         }
+
+        public async Task<Teacher?> Get(int id)
+        {
+            return await teacherDAL.Get(id);
+        }
+
+        
     }
 }
 

@@ -10,5 +10,7 @@ namespace BL.Persons
     public interface ICompanyRepository
     {
         Task Create(Company company);
+
+        Task Delete(Company company);
     }
 }

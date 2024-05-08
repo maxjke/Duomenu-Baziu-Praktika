@@ -127,33 +127,39 @@ namespace DBP.Controllers
         }
         [HttpPost]
         [Route("/update-lecturer")]
-        public async Task<IActionResult> UpdateLecturer(TeacherViewModel teacher)
+        public async Task<IActionResult> UpdateLecturer(TeacherViewModel model)
         {
-            var teacherModel = new Teacher()
+            var teacher = await teacherRepo.Get(model.Id);
+
+
+            await studRepo.Update(new ContactInfo()
             {
-                ContactInfo = new ContactInfo()
-                {
-                    Address = teacher.Address,
-                    Zipcode = teacher.Zipcode,
-                    Email = teacher.Email,
-                    City = teacher.City,
-                    Name = teacher.Name,
-                    LastName = teacher.LastName,
-                    PhoneNumber = teacher.PhoneNumber,
-                    Country = teacher.Country
+                Id = (int)teacher.contactinfo_id,
+                Name = model.Name,
+                Address = model.Address,
+                City = model.City,
+                Country = model.Country,
+                Zipcode = model.Zipcode,
+                Email = model.Email,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber
+            });
 
-                }
-            };
-            await teacherRepo.Update(teacherModel);
-
-            return View("EditLecturers");
+            return Redirect("/Home/EditStudents");
         }
+
+        [HttpDelete]
+        [Route("/delete-company")]
+        public async Task<IActionResult> DeleteCompany()
+        {
+            await companyRepo.Delete();
+            return View("EditCompanies");
+        }
+
         [HttpDelete]
         [Route("/delete-lecturer")]
         public async Task<IActionResult> DeleteLecturer()
         {
-            await teacherRepo.Delete(teacher);
-
             return View("EditLecturers");
         }
 

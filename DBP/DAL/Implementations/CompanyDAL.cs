@@ -31,6 +31,12 @@ namespace DAL.Implementations
             await dbHelper.ExecuteAsync(sql, new {companyname = company.CompanyName,companydescription=company.CompanyDescription});
         }
 
+        public async Task Delete(Company company)
+        {
+            string sql = "delete from Company where idCompany = @Id";
+
+            await dbHelper.ExecuteAsync(sql,new {Id=company.idCompany});
+        }
         
     }
 }

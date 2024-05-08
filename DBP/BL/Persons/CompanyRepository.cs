@@ -25,5 +25,10 @@ namespace BL.Persons
 
             await companyDAL.Create(company);
         }
+
+        public async Task Delete(Company company)
+        {
+           await companyDAL.Delete(company);
+        }
     }
 }

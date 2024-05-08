@@ -12,5 +12,7 @@ namespace DAL.Interfaces
         Task<Company?> Get(int idCompany);
 
         Task Create(Company company);
+
+        Task Delete(Company company);
     }
 }

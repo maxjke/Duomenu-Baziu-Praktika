@@ -91,11 +91,11 @@
             </form>
         </div>
         <div class="form-check-in">
-            <h2>Ištrinti esamą studentą</h2>
-            <form class="form-check-in-form" asp-action="Create" method="post">
+            <h2>Ištrinti esamą kursą</h2>
+            <form class="form-check-in-form" action="/delete-course" method="post">
                 <div class="form-group">
                     <label class="control-label"></label>
-                    <input class="form-control" placeholder="Įveskite ID" />
+                    <input class="form-control" placeholder="Įveskite ID" name="Id" />
                 </div>
                 <div class="form-button">
                     <button type="submit" class="btn btn-primary">Ištrinti</button>

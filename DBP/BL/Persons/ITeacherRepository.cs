@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,9 @@ namespace BL.Persons
     {
         Task Create(Teacher teacher);
 
-        Task Update(Teacher teacher);
+        Task Update(ContactInfo teacher);
 
         Task Delete(Teacher teacher);
+        Task<Teacher?> Get(int id);
     }
 }
