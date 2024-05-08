@@ -13,7 +13,8 @@ namespace BL.Persons
 
         Task Update(ContactInfo teacher);
 
-        Task Delete(Teacher teacher);
+        Task Delete(int id);
+
         Task<Teacher?> Get(int id);
     }
 }

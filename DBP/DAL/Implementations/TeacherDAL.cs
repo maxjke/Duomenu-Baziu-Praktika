@@ -27,9 +27,19 @@ namespace DAL.Implementations
             await dbHelper.ExecuteAsync(sql, new { contactinfo_id = teacher.contactinfo_id });
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteTeacher(int id)
         {
-            string sql = "delete from Teacher where id = @Id";
+            string sql = @"SET FOREIGN_KEY_CHECKS = 0;
+                            DELETE FROM Teacher WHERE id = @Id;";
+
+            await dbHelper.ExecuteAsync(sql, new { Id = id });
+        }
+
+        public async Task DeleteContact(int id)
+        {
+            string sql = @"SET FOREIGN_KEY_CHECKS = 0; 
+                            DELETE FROM ContactInfo WHERE id = @Id";
+
             await dbHelper.ExecuteAsync(sql, new { Id = id });
         }
 
@@ -40,11 +50,13 @@ namespace DAL.Implementations
             return await dbHelper.QueryScalarAsync<Teacher>(sql, new { id = id });
         }
 
-        public async Task Update(Teacher teacher,int id)
+        public async Task Update(Teacher teacher)
         {
-            string sql = "update Teacher set contactinfo_id = @ContactInfoId where id = @id";
+            string sql = "UPDATE Teacher" +
+                         "SET contactinfo_id = @contactinfo_id" +
+                         "WHERE id = @Id";
 
-            await dbHelper.ExecuteAsync(sql, new {ContactInfoId= teacher.contactinfo_id, id=id });
+            await dbHelper.ExecuteAsync(sql, new { contactinfo_id = teacher.contactinfo_id, Id = teacher.Id });
         }
     }
 }

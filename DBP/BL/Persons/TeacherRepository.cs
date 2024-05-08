@@ -30,9 +30,15 @@ namespace BL.Persons
             await teacherDAL.Create(teacher);
         }
 
-        public async Task Delete(Teacher teacher)
+        public async Task Delete(int id)
         {
-            await teacherDAL.Delete(teacher.Id);
+            var teacher = await Get(id);
+
+            await teacherDAL.DeleteContact((int)teacher.contactinfo_id);
+
+            await teacherDAL.DeleteTeacher(id);
+
+
         }
 
         public async Task Update(ContactInfo teacher)

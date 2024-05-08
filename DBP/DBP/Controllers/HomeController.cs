@@ -140,8 +140,6 @@ namespace DBP.Controllers
         public async Task<IActionResult> UpdateLecturer(TeacherViewModel model)
         {
             var teacher = await teacherRepo.Get(model.Id);
-
-
             await studRepo.Update(new ContactInfo()
             {
                 Id = (int)teacher.contactinfo_id,
@@ -155,22 +153,26 @@ namespace DBP.Controllers
                 PhoneNumber = model.PhoneNumber
             });
 
-            return Redirect("/Home/EditStudents");
+            return Redirect("/Home/EditLecturers");
         }
 
-        [HttpDelete]
-        [Route("/delete-company")]
-        public async Task<IActionResult> DeleteCompany()
+        [HttpPost]
+        [Route("/delete-companies")]
+        public async Task<IActionResult> DeleteCompany(Company company)
         {
-            await companyRepo.Delete();
-            return View("EditCompanies");
+            await companyRepo.Delete(company);
+            return Redirect("/Home/EditCompanies");
+
+            
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("/delete-lecturer")]
-        public async Task<IActionResult> DeleteLecturer()
+        public async Task<IActionResult> DeleteLecturer(int id)
         {
-            return View("EditLecturers");
+            await teacherRepo.Delete(id);
+
+            return Redirect("/Home/EditLecturers");
         }
 
         public IActionResult Index()
