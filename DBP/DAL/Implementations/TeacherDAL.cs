@@ -2,9 +2,12 @@
 using DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DAL.Implementations
 {
@@ -24,11 +27,24 @@ namespace DAL.Implementations
             await dbHelper.ExecuteAsync(sql, new { contactinfo_id = teacher.contactinfo_id });
         }
 
+        public async Task Delete(int id)
+        {
+            string sql = "delete from Teacher where id = @Id";
+            await dbHelper.ExecuteAsync(sql, new { Id = id });
+        }
+
         public async Task<Teacher?> Get(int id)
         {
             string sql = "select * from Teacher where id = @id";
 
             return await dbHelper.QueryScalarAsync<Teacher>(sql, new { id = id });
+        }
+
+        public async Task Update(Teacher teacher,int id)
+        {
+            string sql = "update Teacher set contactinfo_id = @ContactInfoId where id = @id";
+
+            await dbHelper.ExecuteAsync(sql, new {ContactInfoId= teacher.contactinfo_id, id=id });
         }
     }
 }

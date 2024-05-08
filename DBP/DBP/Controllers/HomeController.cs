@@ -135,7 +135,37 @@ namespace DBP.Controllers
 
             return View("EditCourses");
         }
-       
+        [HttpPost]
+        [Route("/update-lecturer")]
+        public async Task<IActionResult> UpdateLecturer(TeacherViewModel teacher)
+        {
+            var teacherModel = new Teacher()
+            {
+                ContactInfo = new ContactInfo()
+                {
+                    Address = teacher.Address,
+                    Zipcode = teacher.Zipcode,
+                    Email = teacher.Email,
+                    City = teacher.City,
+                    Name = teacher.Name,
+                    LastName = teacher.LastName,
+                    PhoneNumber = teacher.PhoneNumber,
+                    Country = teacher.Country
+
+                }
+            };
+            await teacherRepo.Update(teacherModel);
+
+            return View("EditLecturers");
+        }
+        [HttpDelete]
+        [Route("/delete-lecturer")]
+        public async Task<IActionResult> DeleteLecturer()
+        {
+            await teacherRepo.Delete(teacher);
+
+            return View("EditLecturers");
+        }
 
         public IActionResult Index()
         {
