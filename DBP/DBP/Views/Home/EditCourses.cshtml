@@ -2,23 +2,14 @@
     ViewData["Title"] = "Kursų tvarkymas";
 }
 
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
+<link rel="stylesheet" href="~/css/Admin/StudentPanel/studentPanel.css" />
 
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
-</style>
-
-<form method="get" action="pasolnachui">
-    <input type="search" id="search" placeholder="Įveskite ID" />
-    <button type="submit" for="search">Ieškoti</button>
-</form>
+<div class="search-container">
+    <form method="get" action="/searchStudent">
+        <input type="search" id="search" placeholder="Įveskite ID" />
+        <button type="submit" for="search">Ieškoti</button>
+    </form>
+</div>
 
 <div class="container" style="margin-top: 200px">
     <table>
@@ -46,58 +37,70 @@
         </tbody>
     </table>
 
-    <h2>Sukurti nauja kursą</h2>
-    <form asp-action="Create" method="post">
-        <div class="form-group">
-            <label @* asp-for="Address" *@ class="control-label"></label>
-            <input@* asp-for="Address" *@ class="form-control" placeholder="Įveskite kurso pavadinimą" />
+    <div class="form-container">
+        <div class="form-check-in">
+            <h2>Sukurti nauja kursą</h2>
+            <form class="form-check-in-form" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kurso pavadinimą" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kurso trukmę (minutėmis)" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kainą" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite dėstytojo vardą" />
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-primary">Sukurti</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label @* asp-for="Zipcode" *@ class="control-label"></label>
-            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
+        <div class="form-check-in">
+            <h2>Atnaujinti esamą kursą</h2>
+            <form class="form-check-in-form" asp-action="Update" method="post">
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite ID" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kurso pavadinimą" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kurso trukmę (minutėmis)" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite kainą" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite dėstytojo vardą" />
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-primary">Atnaujinti</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label @* asp-for="Email" *@class="control-label"></label>
-            <input@* asp-for="Email" *@class="form-control" placeholder="Enter e-mail" />
+        <div class="form-check-in">
+            <h2>Ištrinti esamą studentą</h2>
+            <form class="form-check-in-form" asp-action="Create" method="post">
+                <div class="form-group">
+                    <label class="control-label"></label>
+                    <input class="form-control" placeholder="Įveskite ID" />
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-primary">Ištrinti</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label @* asp-for="Name" *@ class="control-label"></label>
-            <input@* asp-for="Name" *@ class="form-control" placeholder="Enter name" />
-        </div>
-        <button type="submit" class="btn btn-primary">Create</button>
-    </form>
-
-    <h2>Atnaujinti esamą kursą</h2>
-    <form asp-action="Update" method="post">
-        <div class="form-group">
-            <label @* asp-for="Id" *@ class="control-label"></label>
-            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter ID" />
-        </div>
-        <div class="form-group">
-            <label @* asp-for="Address" *@ class="control-label"></label>
-            <input@* asp-for="Address" *@ class="form-control" placeholder="Enter address" />
-        </div>
-        <div class="form-group">
-            <label @* asp-for="Zipcode" *@ class="control-label"></label>
-            <input@* asp-for="Zipcode" *@ class="form-control" placeholder="Enter zipcode" />
-        </div>
-        <div class="form-group">
-            <label @* asp-for="Email" *@class="control-label"></label>
-            <input@* asp-for="Email" *@class="form-control" placeholder="Enter e-mail" />
-        </div>
-        <div class="form-group">
-            <label @* asp-for="Name" *@ class="control-label"></label>
-            <input@* asp-for="Name" *@ class="form-control" placeholder="Enter name" />
-        </div>
-        <button type="submit" class="btn btn-primary">Update</button>
-    </form>
-
-    <h2>Ištrinti esamą studentą</h2>
-    <form asp-action="Create" method="post">
-        <div class="form-group">
-            <label @* asp-for="Id" *@ class="control-label"></label>
-            <input@* asp-for="Id" *@ class="form-control" placeholder="Enter Id" />
-        </div>
-        <button type="submit" class="btn btn-primary">Delete</button>
-    </form>
+    </div>
 </div>
