@@ -15,7 +15,6 @@
     <Folder Include="wwwroot\css\Admin\LectorsPanel\" />
     <Folder Include="wwwroot\css\Admin\CoursesPanel\" />
     <Folder Include="wwwroot\css\Admin\CompaniesPanel\" />
-    <Folder Include="wwwroot\css\Admin\StudentPanel\" />
   </ItemGroup>
 
 </Project>
